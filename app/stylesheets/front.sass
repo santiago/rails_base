@@ -1,0 +1,64 @@
+@import grid_vars
+@import utils
+@import blueprint
+@import blueprint/reset
+
++blueprint-global-reset
+
+@import base
+
+@import layout
+@import signin
+
+@import home_page
+
+.content
+  +column(17, true)
+  +prepend(1)
+
+#verify-account
+  .email
+    +column(16,true)
+    padding: 10px
+    background-color: #FFDDA6
+    border: 2px solid #F29C11
+    +corner(6px)
+  p
+    margin: 10px 0 10px
+
+#activation
+  p
+    margin: 10px 0 10px
+  #login
+    +prepend(1)
+    +column(16, true)
+    border-width: 1px
+    margin: 10px 0 10px
+    .field
+      +column(8)
+      margin: 5px 0 5px
+      label
+        +column(8)
+        font-size: 16px
+        margin: 5px 0 5px
+      input[type=text], input[type=password]
+        height: 20px
+        font-size: 16px
+      &.password
+        +column(8, true)
+    .remember
+      +column(8, true)
+      +append(9)
+    h1
+      color: #EEE
+      font-size: 5px
+    .submit
+      +column(2,last)
+      margin-top: 10px
+
+#login
+  p.validation
+    color: red
+    font-size: 12px
+
+@import couple_fun

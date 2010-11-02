@@ -1,0 +1,42 @@
+!!! Strict
+%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+  = render "shared/head"
+  %body
+    #root.two-col
+      #header
+        %h1 CoupleSpace
+        #account-menu
+          %a.top-tab.about-cs{:href=>"/about"} About CoupleSpace
+          #top-feedback.top-option
+            = render "shared/feedback"
+          %span.span &nbsp
+          %a.current-user.top-tab #{current_user.login} &nbsp;
+          - if current_partner.is_linked?
+            %a.top-tab.partner-user #{current_partner.my_partner_login}
+          - else
+            %a.top-tab.not-linked Not yet linked
+          %a.top-tab#my-account{:href=>"/account/edit"} My Account
+          %a.top-tab#logout{:href=>"/account/logout"} logout
+      #left
+        #sidebar-left
+          = yield :left_menu
+      #main
+        #home-nav
+          #home-tab.home-tab.on
+            %a{:href=>"/home"} Home
+          #cyn-tab.home-tab
+            %a{:href=>"/clarify-your-needs"} Clarify Your Needs
+          #syn-tab.home-tab
+            %a{:href=>"/satisfy-your-needs"} Satisfy Your Needs
+          #yocs-tab.home-tab
+            %a{:href=>"/your-own-couple-space"} Your Own Couple Space
+          #fun-tab.home-tab
+            %a{:href=>"/couple_fun"} CoupleSpace Fun
+        #home-content
+          - if @at_home_page
+            = render "front/hp_nav"
+          = yield :layout
+      #footer
+        This is the footer.
+    = render "shared/javascripts"
+    = yield :javascripts

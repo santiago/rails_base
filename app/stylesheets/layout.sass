@@ -1,0 +1,407 @@
+=top_tab
+  padding: 5px
+  background-color: #EEE
+  border: 1px solid #AAA
+  border-top: 0
+  +corner-bottom(6px)
+  color: black
+  font-size: 12px
+
+span.loader
+  +box(16px,16px)
+  background: url(/images/ajax-loader.gif) no-repeat scroll 0 0
+
+.flash
+  font-size: 12px
+  color: red
+  text-align: center
+
+#root
+  &.home
+    text-align: center
+
+  .home-header
+    margin: 10px 0 10px
+    font-weight: 900
+
+#header
+  *
+    float: left    
+
+#header, #footer
+  +column(24, true)
+  background-color: #FFF
+
+#footer
+  #footer-content
+    +column(24, true)
+    height: 100px
+    background-color: #EEE
+
+#header
+  !vmargin = 20px
+  h1
+    +column(7)
+    margin-top = !vmargin
+    margin-bottom = !vmargin
+    font-size: 30px
+
+#sidebar-left, #sidebar-right
+  height: 100%
+
+#sidebar-right
+  +column(4, true)
+
+#login, #signup, #edit-account-form, #partner-link-form, #edit-partner-link
+  text-align: left
+  // margin-left: 310px
+  +prepend(1)
+  +column(8)
+  +corner(6px)
+  border: 2px solid #666
+  color: #666
+  background-color: #EEE
+  padding-top: 20px
+  padding-bottom: 20px
+  .field,.submit,.register
+    +column(9)
+  .field:not(.remember)
+    margin: 10px 0 10px
+    label,input
+      font-size: 20px
+    label
+      +column(2,true)
+    input
+      +column(7)
+      height: 25px
+    .check
+      top: 35px
+      left:  -20px
+    .error
+      +column(7, true) 
+      display: none
+  .register
+    margin: 5px 0 5px
+    a,p
+      float: left
+      font-size: 12px
+      margin-right: 10px
+  
+#partner-link-form
+  margin-left: 205px
+  font-size: 14px
+  .field:not(.remember)
+    margin: 5px 0
+    label
+      +column(6)
+    label, input
+      font-size: 14px
+    input
+      height: 17px
+
+#login
+  .forgot-password
+    +column(7, true)
+    margin: 5px 0
+    a
+      font-size: 12px
+
+#edit-account
+  margin-left: 200px
+  margin-top: 30px
+  #edit-account-form, #edit-partner-link
+    margin-left: 0
+    margin-bottom: 10px
+    h2
+      font-weight: 900
+      font-size: 18px
+  #edit-partner-link
+    h2
+      margin-bottom: 10px
+    p span.login
+      font-weight: 900
+
+#left
+  +column(5)
+  background-color: #FFF
+  #sidebar-left
+    padding: 10px
+    height: 450px
+    +corner-left(6px)
+    background-color: #FFF
+    margin-top: 51px
+    border: 1px solid #000
+    border-right: 0
+    .menu-option
+      +column(4)
+      margin-top: 40px
+      margin-left: 13px
+      a
+        +corner(6px)
+        border: 1px solid #000
+        padding: 15px
+        text-decoration: none
+        color: #000
+
+#main
+  +column(19,true)
+  background-color: #FFF
+  #home-nav
+    +column(19,true)
+    .home-tab
+      +column(3)
+      +corner-top(6px)
+      // margin-top: -1px
+      border: 1px solid #000
+      border-bottom: 0
+      height: 50px
+      text-align: center
+      &#fun-tab
+        +column(3,true)
+      &.on
+        background-color: #FFF
+
+  #home-content
+    +column(19,true)
+    min-height: 1000px
+    height: auto !important
+    height: 1000px
+    margin-left: -10px
+    border: 1px solid #000
+    
+#my-account, #login-tab, .top-tab
+  +top_tab
+
+#my-account
+  // margin-left: 200px
+
+#root
+  #signup, #link-to-partner #signup, #edit-account-form
+    $field_border_color: #AAA
+    $label_color: #123ABC
+    $field_corner: 6px
+    .birthdate
+      $column_2 : $blueprint_grid_width + $gutter - 5px
+      $column_3 : $blueprint_grid_width + $gutter - 5px
+      position: relative
+      border: 0
+      .field
+        border: 1px solid #AAA
+        background-color: #FFF
+        +corner($field_corner)
+        +vpadding(3px,3px)
+        .label
+          +column(2)
+          p
+            padding-left: 5px
+            padding-right: 5px
+        input
+          border: 0
+          +column(1,true)
+      .label,  label
+        border: 0
+        +column(8, true)
+        p
+          margin: 0
+          font-size: 14px
+          font-weight: 900
+          padding-top: 4px
+          float: left
+          &.value
+            color: black
+            font-size: 16px
+            font-style: normal
+      .day,.month
+        +column(2)
+        margin-right: 7px
+        .value
+          padding-top: 2px
+      .year
+        +column(3, true)
+        .label
+          +column(3,true)
+        input
+          +column(2,true)
+          width: 60px
+      .month-options
+        +column(4,true)
+        +pos(37px,-77px)
+      .day-options
+        +pos(113px,-185px)
+        font-size: 12px
+        +column(1)
+        text-align: center
+      .options
+        background-color: white
+        border: 1px solid $field_border_color
+        padding: 10px
+        +corner(4px)
+        +hidden
+        a
+          color: $label_color
+        z-index: 10
+    .gender
+      border: 0
+      .male,.female
+        .label
+          +column(1)
+          border: 1px solid $field_border_color
+          +corner($field_corner)
+          text-align: center
+          p
+            text-decoration: none
+            color: #000
+            font-style: normal
+            padding: 3px
+            cursor: pointer
+      .male.on
+        .label
+          background-color: #73AAC6
+          p  
+            color: white
+      .female.on
+        .label
+          background-color: #C97373
+          p
+            color: white
+    .terms
+      +column(7,true)
+      #terms-of-use
+        p
+          +column(7,true)
+          font-size: 12px
+          background-color: white
+          border: 1px solid #AAA
+          padding: 5px
+          height: 200px
+          overflow: auto
+
+#forgot-password
+  text-align: left
+  margin-left: 310px
+  margin-top: 30px
+  +column(7, true)
+  +vpadding(20px,20px)
+  +append(1)
+  +prepend(1)
+  border: 2px solid #AAA
+  background-color: #EEE
+  +corner(6px)
+  h1
+    font-size: 18px
+    font-weight: 900
+    +column(4)
+  h1,a.login
+    float: left
+  a.login
+    +column(3, true)
+    text-decoration: none
+    color: #6065DB
+    text-align: left
+  p.info
+    +column(7, true)
+    font-size: 14px
+    margin: 10px 0
+  .field
+    margin: 10px 0
+    .label
+      +column(2)
+    .input
+      +column(4, true)
+    .submit
+      +column(4, true)
+      text-align: left
+
+#account-menu
+  position: relative
+  +column(17, true)
+  //+prepend(4)
+  #top-login
+    +pos(274px,0)
+    .top-tab
+      margin-left: 230px
+  #top-feedback
+    +pos(200px,0)
+    .top-tab
+      background-color: #BDF7BA
+      border-color: #2B6128
+      margin-left: 200px
+  #login, #feedback
+    padding: 5px
+    border-width: 1px
+    border-color: #AAA
+    border-top: 0
+    +corner-top(0)
+    +corner-bottom(6px)
+    +column(7, true)
+    .field, .register, .submit
+      +column(7,true)
+      font-size: 14px
+    .field:not(.remember)
+      label
+        +column(6,true)
+        font-size: 14px
+      input
+        +column(6,true)
+        height: 20px
+        font-size: 16px
+    display: none
+  .top-option
+    &.on
+      z-index: 1000
+      #login, #feedback
+        display: inline
+  #feedback
+    background-color: #BDF7BA
+    border-color: #2B6128
+    textarea
+      border: 1px solid #2B6128
+      width: 280px
+      height: 100px
+    input
+      border: 1px solid #2B6128
+      width: 280px
+      height: 20px
+    button
+      margin-left: 225px
+    p
+      color: #2B6128
+      font-weight: 900
+      font-size: 12px
+      margin: 10px 0 10px
+    .waiting p
+      margin: 10px 0
+      .loader
+        margin-right: 10px
+
+.explain
+  +column(17, true)
+  +prepend(1)
+  p
+    padding: 10px
+    //margin: 10px 10px 10px
+    background-color: #FFFFCC
+    border: 1px solid #AF8645
+    border-top: 0
+    +corner-each(0px,0px,0px,6px)
+    color: #AF8645
+    font-style: italic
+    font-size: 14px
+.explain-tab
+  +column(4)
+  height: 22px
+  text-align: right
+  margin-left: 588px  
+  background-color: #AF8645
+  +corner-bottom(6px)
+  p,a
+    float: left
+    color: #FFF
+    padding: 3px 5px
+  p 
+    font-style: normal
+    font-size: 14px
+    margin-left: 20px
+  a
+    font-size: 12px
+    text-decoration: none

@@ -1,0 +1,140 @@
+#account-menu
+  .about-cs
+    background-color: black
+    color: white
+    +pos(-45px,0)
+    z-index: 1
+  .span
+    margin-left: 200px
+  #top-feedback
+    width: 294px
+    left: -115px
+  .top-tab
+    &.current-user
+      +corner-each(0,0,0,6px)
+    &.partner-user, &.not-linked
+      border-left: 0
+      +corner-each(0,0,6px,0)
+  #my-account,#logout
+    margin-left: 25px
+
+.nsbg-space
+  .nsbg-wrapper, .label-wrapper, .score-wrapper
+    +column(16,true)
+    width: 694px
+  .bar-graph
+    +column(1)
+    width: 34px
+    height: 80px
+    float:left
+    border: 1px solid #CCC
+  .label, .score
+    +column(1)
+    width: 36px
+    font-size: 10px
+    text-align: center
+  .score
+    background-color: #444
+    color: white
+    font-weight: bold
+
+#home.content
+  $home_column: 17
+
+  #cyn-introduction, #heid, #photo-gallery, #wylayp, #link-request
+    +content-box($home_column)
+  #cyn-introduction
+    p.intro-text
+      font-size: 12px
+      padding: 10px
+    .intro
+      +column($home_column,true)
+      border: 1px solid #AAA
+      +corner-bottom(6px)
+  #heid
+    h1
+      .hawd-link
+        font-size: 14px
+        color: black
+    .nsbg-container
+      border: 1px solid #AAA
+      +column(17,true)
+    .nsbg-space
+      border: none
+    .raw-nsbg
+      border: none
+      .nsbg-space
+        width: 680px
+        border: none
+      .wrapper
+        padding: 0
+  #heid-nav, #photo-gallery-nav
+    clear: left
+    li
+      float: left
+      margin-right: 5px
+    a
+      font-size: 12px
+      padding: 3px
+      border: 1px solid #AAA
+      border-top: 0
+      background-color: #EEE
+      +corner-bottom(4px)
+      color: black
+      &.on
+        background-color: #E85163
+        color: white
+  .nsbg-space, #photo-gallery-content, #wylap-content, #link-request-content
+    +column($home_column,true)
+    border: 1px solid #AAA
+    height: 165px
+    .wrapper
+      padding: 10px    
+  #photo-gallery-content
+    height: 400px
+  #wylap-content
+    height: 220px    
+  #upload-photo
+    +column($home_column,true)
+    padding: 10px
+  #start-cyn
+    +column($home_column,true)
+    height: 30px
+    text-align: center
+    position: relative
+    a
+      text-decoration: none
+      position: absolute
+      bottom: 10px
+      right: 10px
+      padding: 5px
+      +column(6,true)
+      +corner(10px)
+      background-color: #00BB55
+      color: white
+      font-weight: 900
+
+#partner-link-existing-partner, #partner-link-request-rejected
+  margin-top: 10px
+  +column(17,true)
+  .wrapper
+    +column(16,true)
+    padding: 10px
+    border: 2px solid #AAA
+    +corner(6px)
+  .info
+    margin: 10px 0
+    +column(15,true)
+  .buttons
+    +column(15,true)
+    margin: 10px 0
+    a
+      +column(3)
+      text-decoration: none
+      text-align: center
+      color: white
+      font-weight: 900
+      padding: 5px 10px
+      +corner(6px)
+      border: 1px solid #AAA
+      background-color: #F2B611

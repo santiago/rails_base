@@ -1,0 +1,192 @@
+@import grid_vars
+@import utils
+@import ghost_dialog
+@import blueprint
+@import blueprint/reset
+
++blueprint-global-reset
+
+@import base
+
+#edit-account-form
+  .flash
+    color: green
+    font-weight: 900
+
+#cyn-nav
+  margin-top: 10px
+  margin-left: 20px
+  height: 31px
+  li
+    display: block
+    float: left
+    border: 1px solid #666
+    margin-right: 10px
+    padding: 5px 20px
+    +corner(4px)
+    background-color: #FFF
+    a
+      color: #000
+      text-decoration: none
+      
+#partner-profile
+  +prepend(1)
+  .ghost-dialog
+    +ghost_dialog(452px,580px)
+  #partner-profile-form
+    !field_height = 25px
+    !field_corner = 4px
+    !field_border_color = #666
+    $label_color = #808080
+
+    +column(9)
+    // +prepend(1)
+    // +append(1)
+    height: 500px
+    +corner(8px)
+    background-color: #FFF
+    padding-top: 20px
+    .label,.top-label
+      +column(3)
+      height = !field_height
+      p
+        color: #808080
+        font-style: italic
+        margin-right: 10px
+        padding-top: 2px
+        padding-left: 5px
+    .label
+      border-right: 1px solid !field_border_color
+    .top-label
+      +column(3)
+      border: 1px solid !field_border_color
+      +corner(!field_corner)
+      margin-right: 8px
+      height: 25px
+    .field
+      height: !field_height
+      +corner(!field_corner)
+      +column(9)
+      border: 1px solid !field_border_color
+      margin-bottom: 15px
+      .label, .input
+        float: left
+      .input
+        height: !field_height
+        display: block
+        padding: 0
+        margin-left: -10px
+        +column(6, true)
+        input
+          +column(6)
+          border: 0
+          padding: 3px 0 0 0
+          font-size: 16px
+    .birthdate
+      $column_2 : $blueprint_grid_width + $gutter - 5px
+      $column_3 : $blueprint_grid_width + $gutter - 5px
+      position: relative
+      border: 0
+      .label
+        border: 0
+        +column(2)
+        p
+          margin: 0
+          font-size: 14px
+          padding-top: 4px
+          float: left
+          &.value
+            color: black
+            font-size: 16px
+            font-style: normal
+      .day,.month
+        +column(2)
+        +column_n(2,$blueprint_grid_width - 5px,$gutter)
+        margin-right: 7px
+      .year
+        +column(2, true)
+        +column_n(2,$blueprint_grid_width + 5px,$gutter,true)
+      .month-options
+        background-color: white
+        border: 1px solid !field_border_color
+        padding: 10px
+        +corner(4px)
+        +column(3)
+        +pos(235px,-100px)
+        +hidden
+        a
+          color: $label_color
+    .sex
+      border: 0
+      .male,.female
+        .label
+          +column(1)
+          border: 1px solid !field_border_color
+          +corner(!field_corner)
+          text-align: center
+          p
+            text-decoration: none
+            color: #000
+            font-style: normal
+            padding-left: 9px
+            padding-top: 3px
+            cursor: pointer
+      .male.on
+        .label
+          background-color: #73AAC6
+          p  
+            color: white
+      .female.on
+        .label
+          background-color: #C97373
+          p
+            color: white
+    .repassword
+      .label
+        width: 150px
+      .input, .input input
+        width: 215px
+    .location
+      border: 0
+      height: 68px
+      .city
+        +column(5)
+        :width 196px
+        .label
+          +column(1)
+          width: 55px
+      .zip
+        +column(4, true)
+        .label
+          +column(1)
+          width: 42px
+      .state
+        +column(5, true)
+    .save-btn
+      +prepend(7)
+      text-align: center
+      p
+        padding-top: 3px
+        +corner(6px)
+        height: 25px
+        background-color: #FFAB00
+        +column(2)
+        color: white
+
+
+@import admin
+
+@import nsbg
+@import hawd
+@import yocs
+@import cyn
+@import syn
+@import needs
+@import signin
+@import couple_fun
+@import couple_quizzes
+@import positive_strokes
+
+@import layout
+@import home_page
+@import home
